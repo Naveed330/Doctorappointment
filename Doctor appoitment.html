@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .colr{
+            background-color: orangered;
+        }
+        button{
+            margin: 2px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <table id="tableData" border="1px">
+            <thead>
+                <th>Time</th>
+                <th>Available</th>
+                <th>Appoint</th>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+         let appointments = [
+            { timing: "9am-10am", booked: false },
+            { timing: "10am-11am", booked: true },
+            { timing: "11am-12pm", booked: true },
+            { timing: "12pm-1pm", booked: true },
+            { timing: "1am-2pm", booked: false },
+            { timing: "2am-3pm", booked: true }  
+        ];
+
+        getAppointment();
+        function getAppointment (){
+            
+            let tableData = document.getElementById("tableData");
+
+            for (let appoint of appointments){
+
+                //create td and tr 
+                let tableRow = document.createElement("tr");
+                tableData.appendChild(tableRow);
+                let tableCol = document.createElement("td");
+                tableCol.innerText = appoint.timing;
+                let tableCol1 = document.createElement("td");
+                tableCol1.innerText = appoint.booked;
+
+                //show button of appoint 
+                let btn = document.createElement("button");
+                btn.innerText = "Appoint Dr";
+                if (!appoint.booked){
+                    btn.disabled = true;
+                }
+               
+                //Appendd data in table row
+                tableRow.appendChild(tableCol);
+                tableRow.appendChild(tableCol1);
+                tableRow.appendChild(btn);
+
+                //disable button on click
+                btn.onclick = function(event){
+                    event.target.disabled = true;
+                    appoint.booked = !appoint.booked;
+                    tableCol1.innerText = false;
+                    tableRow.classList = "colr";
+                    //alert("You Dr appointment Timing is " + appoint.timing)
+                }
+
+                //Delete button add in table
+                let del = document.createElement("button");
+                del.innerText = "Delete";
+                tableRow.appendChild(del);
+
+               //remove data from table 
+                del.onclick = function(event){
+                    let rem = appointments.indexOf(appoint);
+                    appointments.splice(rem,1);
+                    tableRow.remove();
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

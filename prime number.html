@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+    calculatePrime();
+    function calculatePrime (){
+        let start = +prompt("Enter Starting Digit");
+        let end = +prompt("last digit of prime number");
+
+        let flag,i;
+        
+        for(start ; start <= end ; start++){
+        flag = 0 ;
+
+        for( i=2 ; i <= start/2 ; i++){
+            if (start % i == 0){
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0){
+            console.log(start);
+        }
+
+    }
+
+    }
+
+    </script>
+</body>
+</html>

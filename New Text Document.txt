@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="some">
+
+        <input id="email" type="email">
+        <input id="password" type="password">
+
+        <button id="some1" onclick="requestAppointment(event)">Request Appointment </button>
+    </div>
+
+
+    <script>
+
+
+        let appointments = [
+            { timing: "9am-10am", booked: false },
+            { timing: "10am-11am", booked: false },
+            { timing: "11am-12pm", booked: false }
+        ]
+
+
+        function requestAppointment(e) {
+
+            e.target.disabled = true;
+
+            let aNUmber = prompt("Enter appointment numbwe");
+
+            appointments[aNUmber - 1].booked = true;
+
+
+
+        }
+
+        function showAviableAppointments() {
+
+            for (let appointment of appointments) {
+
+                if (!appointment.booked) {
+                    console.log(appointment);
+                }
+
+            }
+
+        }
+
+        showAviableAppointments();
+
+
+
+
+
+
+        // generatePrimeNumbers(20)
+
+
+        // function generatePrimeNumbers(number) {
+
+        //     for (let j = 2; j <= number; j++) {
+
+        //         let div = j / 2;
+        //         let flag = true;
+
+        //         for (let i = 2; i <= div; i++) {
+
+        //             if (j % i == 0) {
+        //                 flag = false;
+        //                 break;
+        //             }
+
+        //         }
+
+        //         if (flag) {
+        //             console.log('primer number ' + j);
+        //         }
+
+        //     }
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let n, i, m = 0, flag = 0;
+        // n = prompt("Enter the number to check prime:");
+
+        // m = n / 2;
+
+        // for (i = 2; i <= m; i++) {
+        //     if (n % i == 0) {
+        //         console.log("Number is not prime");
+        //         flag = 1;
+        //         break;
+        //     }
+        // }
+
+        // if (flag == 0) {
+        //     console.log("Number is prime");
+        //     // return 0;
+        // }
+
+
+
+        // let data = ['a', 'b', 'c', 'd'];
+
+        // for (let counter = 2; counter <= 20; counter++) {
+
+        //     if(counter / counter ){
+
+
+        //     }
+
+        //     // console.log(counter);
+
+
+        // }
+
+        // let item = "Lahore";
+        // let str = "";
+
+        // for(let c in item){
+
+        //     str += item[c].toUpperCase();
+        //     console.log(item[c].toUpperCase());
+
+        // }
+
+        // console.log(str);
+
+        // console.log(item[0].toUpperCase())
+        // console.log(item[1].toUpperCase())
+        // console.log(item[2].toUpperCase())
+        // console.log(item[3].toUpperCase())
+        // console.log(item[4].toUpperCase())
+        // console.log(item[5].toUpperCase())
+        // console.log(item[6].toUpperCase())
+
+        // let user = {};
+
+        // function login() {
+
+        //     let user = checkINDatabase(email.value, password.value);
+        //     console.log(user.name);
+        //     console.log(user.city);
+
+        // }
+
+        // //Other function
+        // function checkINDatabase(email, password) {
+
+        //     //blah blah blah
+
+        //     return { 
+        //         name:email,
+        //         city:password
+        //     }
+
+
+        // }
+
+        // let myData = ["A", "B", "C"];
+
+        // console.log(myData);
+
+        // makeBiryani(myData);
+
+        // console.log(myData);
+
+        // function makeBiryani(ingredients) {
+
+        //     ingredients[0] = 20;
+        //     ingredients[1] = 30;
+        //     ingredients[2] = 40;
+
+        // }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html
